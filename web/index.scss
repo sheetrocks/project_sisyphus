@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+$primary: #9E8876;
+
+body {
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Irish Grover', cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.todo-app {
+  // todo-app class which hasa border radius of 10px, max-width of 400px on desktop, and a margin of 1rem auto
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+// .start-over button is on the top right of the app (uses absolute positioning), has a cursor of pointer, it's underline, and glows on hover
+.start-over {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    text-shadow: 0 0 10px $primary;
+  }
+}
+
+// .task is a class which has an input checkbox and p tag inline. It's left aligned.
+.task {
+  font-size: 1.2rem;
+
+  // first td has width of 2 rem
+  &:first-child {
+    width: 2rem;
+  }
+
+  &.completed {
+    text-decoration: line-through;
+    color: $primary;
+  }
+
+  input[type='checkbox'] {
+    margin-right: 1rem;
+
+    // set the checkbox to be a little bigger, and also have a $primary color scheme.
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid $primary;
+    accent-color: $primary;
+  }
+}
+
+// the .add-task form contains an input text and a submit button. They should be styled like bulma style fields / controls.
+.add-task {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  input[type='text'] {
+    border: 1px solid $primary;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0.5rem;
+    flex: 1;
+  }
+  button[type='submit'] {
+    border: 1px solid $primary;
+    border-radius: 0px 5px 5px 0px;
+    padding: 0.5rem;
+    background-color: $primary;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: white;
+      color: $primary;
+    }
+  }
+}
